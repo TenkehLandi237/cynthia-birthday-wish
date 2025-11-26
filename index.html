@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Cynthia ❤</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #110e14, #0f0c1a3a);
+        text-align: center;
+        color: #fff;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    h1 {
+        margin-top: 40px;
+        font-size: 3rem;
+        text-shadow: 0 0 20px rgba(255,255,255,0.8);
+        animation: glow 2.5s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 15px #ffb7d5; }
+        to { text-shadow: 0 0 35px white; }
+    }
+
+    .msg-box {
+        width: 85%;
+        margin: 25px auto;
+        background: rgba(255,255,255,0.15);
+        padding: 25px;
+        border-radius: 18px;
+        line-height: 1.8;
+        font-size: 1.15rem;
+        backdrop-filter: blur(12px);
+    }
+
+    .slideshow {
+        width: 92%;
+        max-width: 360px;
+        height: 440px;
+        margin: 20px auto;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 0 25px rgba(0,0,0,0.35);
+    }
+
+    .slideshow img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+    }
+
+    /* Floating hearts */
+    .heart {
+        position: fixed;
+        bottom: -20px;
+        color: pink;
+        font-size: 20px;
+        animation: float 7s linear forwards;
+    }
+
+    @keyframes float {
+        from { transform: translateY(0); opacity: 1; }
+        to { transform: translateY(-700px); opacity: 0; }
+    }
+
+    /* FALLING ROSES */
+    .rose {
+        position: fixed;
+        top: -50px;
+        font-size: 28px;
+        animation: drop 7s linear forwards;
+        pointer-events: none;
+    }
+
+    @keyframes drop {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(800px) rotate(360deg); opacity: 0; }
+    }
+
+    button {
+        padding: 12px 30px;
+        border-radius: 12px;
+        background: white;
+        color: #ff6fa9;
+        border: none;
+        font-size: 1rem;
+        margin-top: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.06);
+        background: #ffe6f0;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>🎉 Happy Birthday Cynthia ❤</h1>
+
+<div class="slideshow">
+    <img src="image1.jpg" class="slide" style="display:block;">
+    <img src="image3.jpg" class="slide">
+    <img src="image2.jpg" class="slide">
+    <img src="image4.jpg" class="slide">
+    <img src="image5.jpg" class="slide">
+    <img src="image6.jpg" class="slide">
+</div>
+
+<div class="msg-box">Cynthia, today is your day… and I hope you feel every bit of beauty, joy, and light that you bring into the lives around you.
+I may not say it often, but you’re incredible — the kind of girl whose smile can shift a whole mood, whose presence makes everything calmer and brighter.
+You’re special in a way that’s not loud, but unforgettable.
+So today, I just want to celebrate you — your kindness, your softness, your strength, and the way you naturally glow without even trying.
+Happy Birthday, Cynthia.
+I pray this new age brings you peace, success, love, and everything your heart silently wishes for.
+You deserve the world and more.
+— From someone who truly admires you. ❤
+</div>
+
+<!-- Place this where you want the player to appear -->
+<div style="width: 100%; max-width: 500px; margin: 20px auto;">
+  <audio id="music" autoplay loop controls style="width:100%;">
+      <source src="Achalugo.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+  </audio>
+</div>
+
+
+<script>
+function playSong() {
+    document.getElementById("music").play();
+}
+
+/* Slideshow */
+let index = 0;
+const slides = document.getElementsByClassName("slide");
+
+setInterval(() => {
+    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+    index = (index + 1) % slides.length;
+    slides[index].style.display = "block";
+}, 3200);
+
+/* Floating hearts */
+setInterval(() => {
+    let h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤";
+    h.style.left = Math.random() * window.innerWidth + "px";
+    h.style.fontSize = (20 + Math.random() * 25) + "px";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 7000);
+}, 700);
+
+/* FALLING ROSES */
+setInterval(() => {
+    let rose = document.createElement("div");
+    rose.className = "rose";
+    rose.innerHTML = "🌹";
+    rose.style.left = Math.random() * window.innerWidth + "px";
+    rose.style.fontSize = (25 + Math.random() * 20) + "px";
+    document.body.appendChild(rose);
+    setTimeout(() => rose.remove(), 7000);
+}, 900);
+</script>
+
+</body>
+</html>
